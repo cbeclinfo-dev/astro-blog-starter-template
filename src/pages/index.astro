@@ -13,37 +13,128 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			import React, { useState } from 'react';
+import { Target, Users, Settings, Play, CheckCircle2 } from 'lucide-react';
+
+export default function App() {
+  const [name, setName] = useState('');
+  const [audience, setAudience] = useState('Students');
+  const [goal, setGoal] = useState('');
+  const [showResult, setShowResult] = useState(false);
+
+  const handleAnalyze = () => {
+    if (name && goal) setShowResult(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-100 p-6 font-sans text-slate-800">
+      <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+        <h1 className="text-3xl font-bold mb-4 flex items-center gap-3">
+          <Target className="text-blue-600" /> Project Profile Consultant
+        </h1>
+        
+        <div className="mb-8 text-slate-600 space-y-2">
+          <p>Welcome to your dynamic strategy hub.</p>
+          <p>Because every grand idea needs a solid structure.</p>
+          <p>Therefore, I am here to help you.</p>
+          <p>While you dream big, I organize details.</p>
+          <p>Rather, think of me as your architect.</p>
+        </div>
+
+        {!showResult ? (
+          <div className="space-y-6">
+            <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+              <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <Settings className="w-5 h-5 text-indigo-500" /> Step 1: The Core Identity
+              </h2>
+              <p className="mb-4 text-sm text-slate-600">
+                A project needs a very clear name. Because a title sets the immediate tone. Therefore, type your new project name below.
+              </p>
+              <input
+                type="text"
+                className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+                placeholder="Enter project name..."
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </section>
+
+            <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+              <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <Users className="w-5 h-5 text-indigo-500" /> Step 2: The Global Audience
+              </h2>
+              <p className="mb-4 text-sm text-slate-600">
+                Every tool must serve diverse human perspectives. Because a village elder differs from a hacker. Therefore, select your main target audience now.
+              </p>
+              <select
+                className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+                value={audience}
+                onChange={(e) => setAudience(e.target.value)}
+              >
+                <option>Students</option>
+                <option>Professionals</option>
+                <option>Elders</option>
+                <option>Global Public</option>
+              </select>
+            </section>
+
+            <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
+              <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <Target className="w-5 h-5 text-indigo-500" /> Step 3: The Main Goal
+              </h2>
+              <p className="mb-4 text-sm text-slate-600">
+                A journey requires a highly specific destination. Because wandering blindly wastes your precious energy. Therefore, define your primary objective right here.
+              </p>
+              <input
+                type="text"
+                className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+                placeholder="e.g., Save time, connect people..."
+                value={goal}
+                onChange={(e) => setGoal(e.target.value)}
+              />
+            </section>
+
+            <button
+              onClick={handleAnalyze}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2"
+            >
+              <Play className="w-5 h-5" /> Generate Project Profile
+            </button>
+          </div>
+        ) : (
+          <div className="bg-green-50 p-6 rounded-lg border border-green-200 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <h2 className="text-2xl font-bold mb-4 text-green-800 flex items-center gap-2">
+              <CheckCircle2 className="w-6 h-6" /> Your Custom Blueprint
+            </h2>
+            <div className="space-y-3 text-green-900">
+              <p>Here is your tailored project strategy plan.</p>
+              <p>Because you provided excellent details for me.</p>
+              <p>Therefore, follow this highly specific early advice.</p>
+              <p>While the path is long, start right here.</p>
+              
+              <hr className="border-green-300 my-4" />
+              
+              <ul className="list-disc pl-5 space-y-2 font-medium">
+                <li>Your vision for "{name}" is now clearly defined.</li>
+                <li>Because your audience is {audience}, listen to them closely.</li>
+                <li>Therefore, adapt your new features accordingly.</li>
+                <li>While pursuing "{goal}", stay very flexible always.</li>
+                <li>Rather, treat any early failures as valuable lessons.</li>
+              </ul>
+              
+              <button
+                onClick={() => setShowResult(false)}
+                className="mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors"
+              >
+                Start Over
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 		</main>
 		<Footer />
 	</body>
