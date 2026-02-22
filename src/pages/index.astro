@@ -1,127 +1,62 @@
-import React, { useState } from 'react';
-import { Target, Users, Settings, Play, CheckCircle2, Github } from 'lucide-react';
+---
+import Layout from '../layouts/BlogPost.astro';
+---
 
-export default function App() {
-  const [name, setName] = useState('');
-  const [audience, setAudience] = useState('Students');
-  const [goal, setGoal] = useState('');
-  const [showResult, setShowResult] = useState(false);
+<Layout
+	title="About Me"
+	description="Lorem ipsum dolor sit amet"
+	pubDate={new Date('August 08 2021')}
+	heroImage="/blog-placeholder-about.jpg"
+>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
+		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
+		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
+		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
+		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
+		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+	</p>
 
-  const handleAnalyze = () => {
-    if (name && goal) setShowResult(true);
-  };
+	<p>
+		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
+		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
+		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
+		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
+		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
+		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
+		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
+		massa massa ultricies mi.
+	</p>
 
-  return (
-    <div className="min-h-screen bg-slate-100 p-6 font-sans text-slate-800">
-      <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
-        <h1 className="text-3xl font-bold mb-4 flex items-center gap-3">
-          <Target className="text-blue-600" /> Project Profile Consultant
-        </h1>
-        
-        <div className="mb-8 text-slate-600 space-y-2">
-          <p>Welcome to your dynamic strategy hub.</p>
-          <p>Because every grand idea needs a solid structure.</p>
-          <p>Therefore, I am here to help you.</p>
-          <p>While you dream big, I organize details.</p>
-          <p>Rather, think of me as your architect.</p>
-        </div>
+	<p>
+		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
+		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
+		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
+		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
+		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
+		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
+		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
+		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
+		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
+		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+	</p>
 
-        {!showResult ? (
-          <div className="space-y-6">
-            <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
-              <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                <Settings className="w-5 h-5 text-indigo-500" /> Step 1: The Core Identity
-              </h2>
-              <p className="mb-4 text-sm text-slate-600">
-                A project needs a very clear name. Because a title sets the immediate tone. Therefore, type your new project name below.
-              </p>
-              <input
-                type="text"
-                className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
-                placeholder="Enter project name..."
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </section>
+	<p>
+		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
+		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
+		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
+		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
+		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
+		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
+		cursus metus aliquam eleifend mi.
+	</p>
 
-            <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
-              <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                <Users className="w-5 h-5 text-indigo-500" /> Step 2: The Global Audience
-              </h2>
-              <p className="mb-4 text-sm text-slate-600">
-                Every tool must serve diverse human perspectives. Because a village elder differs from a hacker. Therefore, select your main target audience now.
-              </p>
-              <select
-                className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
-                value={audience}
-                onChange={(e) => setAudience(e.target.value)}
-              >
-                <option>Students</option>
-                <option>Professionals</option>
-                <option>Elders</option>
-                <option>Global Public</option>
-              </select>
-            </section>
-
-            <section className="bg-slate-50 p-6 rounded-lg border border-slate-200">
-              <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                <Target className="w-5 h-5 text-indigo-500" /> Step 3: The Main Goal
-              </h2>
-              <p className="mb-4 text-sm text-slate-600">
-                A journey requires a highly specific destination. Because wandering blindly wastes your precious energy. Therefore, define your primary objective right here.
-              </p>
-              <input
-                type="text"
-                className="w-full p-3 border rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
-                placeholder="e.g., Save time, connect people..."
-                value={goal}
-                onChange={(e) => setGoal(e.target.value)}
-              />
-            </section>
-
-            <button
-              onClick={handleAnalyze}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2"
-            >
-              <Play className="w-5 h-5" /> Generate Project Profile
-            </button>
-          </div>
-        ) : (
-          <div className="bg-green-50 p-6 rounded-lg border border-green-200 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <h2 className="text-2xl font-bold mb-4 text-green-800 flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6" /> Your Custom Blueprint
-            </h2>
-            <div className="space-y-3 text-green-900">
-              <p>Here is your tailored project strategy plan.</p>
-              <p>Because you provided excellent details for me.</p>
-              <p>Therefore, follow this highly specific early advice.</p>
-              <p>While the path is long, start right here.</p>
-              
-              <hr className="border-green-300 my-4" />
-              
-              <ul className="list-disc pl-5 space-y-2 font-medium">
-                <li>Your vision for "{name}" is now clearly defined.</li>
-                <li>Because your audience is {audience}, listen to them closely.</li>
-                <li>Therefore, adapt your new features accordingly.</li>
-                <li>While pursuing "{goal}", stay very flexible always.</li>
-                <li>Rather, treat any early failures as valuable lessons.</li>
-              </ul>
-              
-              <button
-                onClick={() => setShowResult(false)}
-                className="mt-6 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors"
-              >
-                Start Over
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <footer className="max-w-2xl mx-auto mt-8 text-center text-slate-500 text-sm flex justify-center items-center gap-2">
-        <Github className="w-4 h-4" />
-        <p>Ready for GitHub Pages. Because static hosting wins.</p>
-      </footer>
-    </div>
-  );
-}
+	<p>
+		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
+		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
+		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
+		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
+		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+	</p>
+</Layout>
