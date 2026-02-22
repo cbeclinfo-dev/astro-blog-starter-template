@@ -1,20 +1,5 @@
----
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			import React, { useState } from 'react';
-import { Target, Users, Settings, Play, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Target, Users, Settings, Play, CheckCircle2, Github } from 'lucide-react';
 
 export default function App() {
   const [name, setName] = useState('');
@@ -132,10 +117,11 @@ export default function App() {
           </div>
         )}
       </div>
+
+      <footer className="max-w-2xl mx-auto mt-8 text-center text-slate-500 text-sm flex justify-center items-center gap-2">
+        <Github className="w-4 h-4" />
+        <p>Ready for GitHub Pages. Because static hosting wins.</p>
+      </footer>
     </div>
   );
 }
-		</main>
-		<Footer />
-	</body>
-</html>
