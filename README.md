@@ -1,15 +1,8 @@
-            <h2>Our Core Services</h2>
-            <p><strong>We provide bankable project profile writing services in Bangladesh.</strong></p>
-            <p>While ideas are common, funding is rare because banks require specific data. 
-               Therefore, we craft documents that speak the language of finance. 
-               Rather than just writing, we build a bridge to your investment goals.</p>
-     
+We create bankable project profiles in Bangladesh for your business. While many firms offer simple templates, we build detailed roadmaps for growth. We use clear data because lenders need to see real value. Therefore, your vision becomes a solid plan that banks can trust.
 
-        
-            <h2>Why Choose Us?</h2>
-            <ul>
-                <li>Local market insights because we live here.</li>
-                <li>Financial accuracy while maintaining a clear narrative.</li>
-                <li>Fast delivery so you never miss an opportunity.</li>
-            </ul>
+Strategic Financials
+Your numbers must tell a story of profit and safety. Investors look for risks, while we highlight your strengths and solutions. Because we know the local market, your profile will stand out. Rather than guessing, we use facts to prove your project works.
+
+Local Expertise
+Our team understands the specific needs of Bangladeshi banks. Every project is different, therefore we tailor every single page for you. While the market changes, our commitment to your success stays the same. We make the process easy so you can lead.
         
